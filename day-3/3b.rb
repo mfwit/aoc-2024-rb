@@ -9,7 +9,7 @@ while !s.eos?
     enableS << s.scan_until(/don\'t\(\)/)
     s.skip_until(/do\(\)/)
   else
-    enableS << s.scan_until
+    enableS << s.rest
     s.terminate
   end
 end
@@ -19,5 +19,4 @@ enableS.each do |s|
     result += val
   end
 end
-puts enableS[1]
 puts result
